@@ -28,7 +28,9 @@ def main() -> None:
         ROOT / "docs/RESULT_PROVENANCE.md",
         ROOT / "docs/RESULTS_BASELINE.md",
         ROOT / "docs/FIGURE_REPRODUCTION.md",
+        ROOT / "docs/PAPER_ARTIFACT_INDEX.md",
         ROOT / "docs/ENVIRONMENT_AND_NUMERICS.md",
+        ROOT / "docs/REPRODUCTION_GUIDE.md",
         ROOT / "docs/GITHUB_MAINTENANCE_GUIDE.md",
         ROOT / "archive/VERIFICATION.json",
         ROOT / "archive/PACKAGE_SUMMARY.json",
@@ -40,6 +42,12 @@ def main() -> None:
         ROOT / "results_reference/risk_sensitivity_grid.csv",
         ROOT / "results_reference/delta_sensitivity_beta_003.csv",
         ROOT / "results_reference/beta_sensitivity_delta_m002.csv",
+        ROOT / "figures/plot_fig5_target_characteristics.py",
+        ROOT / "figures/plot_fig6_scalar_coefficients.py",
+        ROOT / "figures/plot_fig7_risk_sensitivity.py",
+        ROOT / "figures/plot_fig8_type_improvement.py",
+        ROOT / "figures/plot_fig9_typical_curves.py",
+        ROOT / "tools/export_feature_schema.py",
     ]
     missing = [str(path.relative_to(ROOT)) for path in required if not path.exists()]
     if missing:
