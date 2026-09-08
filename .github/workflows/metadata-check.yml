@@ -1,0 +1,32 @@
+name: 539-D metadata checks
+
+on:
+  push:
+    branches:
+      - main
+      - import-v1.0
+  pull_request:
+    paths:
+      - 'with_spatial/**'
+      - 'docs/**'
+      - '.github/workflows/metadata-check.yml'
+
+jobs:
+  validate-with-spatial-record:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compile maintainable 539-D Python sources
+        run: |
+          python -m compileall -q with_spatial/src with_spatial/baselines with_spatial/experiments with_spatial/figures with_spatial/tools
+
+      - name: Validate authoritative metadata and archive records
+        run: |
+          python with_spatial/tools/validate_repository_metadata.py
