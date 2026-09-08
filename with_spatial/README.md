@@ -2,7 +2,7 @@
 
 论文：**《基于个性化联邦学习的多类型充电站负荷预测及负迁移抑制方法》**。
 
-本目录是当前仓库的**优先维护版本**，用于保存论文原最终实验的539维输入口径和可追溯复现链。它不包含日内滚动预测。
+本目录是当前仓库的**优先维护版本**，用于保存论文原最终实验的539维输入口径、完整方法逻辑和可追溯复现链。它只对应论文日前预测，不包含日内滚动预测。
 
 ## 版本定位
 
@@ -33,6 +33,8 @@ python reproduce_all.py
 python verify_package.py
 ```
 
+完整恢复步骤见 `docs/RELEASE_RESTORE_CHECKLIST.md`。
+
 ## 论文代码映射
 
 - 2.1 联邦残差预测模型 → `src/federated_residual_model.py`
@@ -45,31 +47,72 @@ python verify_package.py
 
 详细映射见 `docs/CODE_TO_PAPER_MAPPING.md`。
 
+## 输入与数据记录
+
+- 完整输入维数：539；
+- 其中12维为空间输入，索引与名称见 `docs/FEATURE_SCHEMA_SUMMARY.md`；
+- 539维分组索引见 `data/feature_group_ranges_539.csv`；
+- 完整逐维特征顺序保存在冻结归档，可在恢复 `data/clients_with_spatial.pkl` 后运行 `tools/export_feature_schema.py` 导出；
+- 40座站点源数据的划分、清洗摘要和逐文件SHA-256记录在 `data/source_station_dataset/`；
+- 源数据到539维冻结缓存的等价核验见 `data/raw_to_cache_equivalence.json` 与 `docs/RAW_DATA_AND_CACHE.md`。
+
 ## 对比方法协议
 
 - 全参数微调、本地MLP和pFedMe微调：30 d目标站历史窗口；
 - 本地滚动岭回归：60 d历史窗口；
 - 本地滚动岭回归当前只有锁定汇总结果，无逐点OOF预测。
 
-## 论文正式日级统计
+详见 `docs/BASELINE_ALIGNMENT_AUDIT.md` 与 `docs/RESULT_PROVENANCE.md`。
 
-日级配对统计保留五折各自两站部署组边界。仓库只维护这一论文口径，测试会阻止已废弃的另一日级聚合数值重新进入代码或文档。
+## 论文正式评价与结果
+
+论文日级配对统计保留五折各自两站部署组边界。仓库只维护这一论文口径，测试会阻止已废弃的另一日级聚合口径重新进入论文代码。
+
+核心V1.0结果：
+
+- 折外逐点预测：42240条；
+- 总体聚合WAPE：0.0935705022；
+- nRMSE：0.0660829513；
+- 全样本WAPE：0.2109880856；
+- 7/10座目标站改善；
+- 最坏站点相对退化：1.5618%；
+- 日级部署组平均WAPE差：-0.0115632639。
+
+详细指标定义见 `docs/METRIC_DEFINITIONS.md`，冻结数值见 `docs/RESULTS_BASELINE.md`。
+
+## 论文结果图
+
+当前仓库维护：
+
+- `figures/plot_fig6_scalar_coefficients.py`：不同目标站滚动标量系数分布；
+- `figures/plot_fig8_type_improvement.py`：三类目标站聚合WAPE相对改善；
+- `figures/plot_fig9_typical_curves.py`：三类典型目标站连续三日预测曲线，论文推荐窗口为2023-02-15至2023-02-17。
+
+绘图数据来源和复现说明见 `docs/FIGURE_REPRODUCTION.md`。
 
 ## 重要文档
 
-- `docs/ARCHIVE_RECORD.md`：冻结档案、结果和修改政策
-- `docs/METHOD_IMPLEMENTATION.md`：论文方法与实现细节
-- `docs/DATA_CONTRACT.md`：539维输入及数据接口
-- `docs/FEATURE_SCHEMA_SUMMARY.md`：特征组和12维空间输入
-- `docs/RAW_DATA_AND_CACHE.md`：源CSV到模型缓存
-- `docs/BASELINE_ALIGNMENT_AUDIT.md`：表2基线协议
-- `docs/RESULTS_BASELINE.md`：冻结数值基线
-- `docs/ENVIRONMENT_AND_NUMERICS.md`：环境与浮点容差
+建议按以下顺序阅读：
 
-## 大文件
+1. `docs/ARCHIVE_RECORD.md`：冻结档案、结果和修改政策；
+2. `docs/CODE_TO_PAPER_MAPPING.md`：论文章节与代码模块映射；
+3. `docs/METHOD_IMPLEMENTATION.md`：方法实现细节；
+4. `docs/DATA_CONTRACT.md`：数据接口和输入边界；
+5. `docs/FEATURE_SCHEMA_SUMMARY.md`：539维结构和12维空间输入；
+6. `docs/FOLD_PROTOCOL.md`：五折目标站轮换与折级参数；
+7. `docs/METRIC_DEFINITIONS.md`：论文评价口径；
+8. `docs/RESULT_PROVENANCE.md`：主方法、消融、基线和图件的结果来源；
+9. `docs/RESULTS_BASELINE.md`：V1.0冻结数值基线；
+10. `docs/ENVIRONMENT_AND_NUMERICS.md`：环境与浮点容差；
+11. `docs/REPRODUCTION_GUIDE.md`：端到端复现步骤；
+12. `docs/GITHUB_MAINTENANCE_GUIDE.md`：后续版本和分支管理。
 
-完整40站源数据、539维客户端缓存、联邦充分统计量、逐点锁定预测和冻结ZIP不进入普通Git历史。校验清单与恢复说明保存在Git中；完整冻结ZIP建议作为私有GitHub Release附件保存。详见 `../docs/LARGE_FILES.md`。
+## 大文件与长期归档
+
+完整40站源数据、539维客户端缓存、联邦充分统计量、逐点锁定预测和冻结ZIP不进入普通Git历史。Git中保留文件级manifest、SHA-256、恢复路径和轻量结果。
+
+完整冻结ZIP应作为私有GitHub Release附件保存；该任务由仓库Issue #3跟踪。详见 `../docs/LARGE_FILES.md` 与 `docs/RELEASE_RESTORE_CHECKLIST.md`。
 
 ## 修改规则
 
-V1.0是历史结果记录，不应原地覆盖。任何改变特征、折参数、基线协议、站群分配或负迁移判定的科学修改，都应新建分支并升级版本，同时记录结果差异。
+V1.0是历史结果记录，不应原地覆盖。任何改变特征、折参数、模型形式、站群分配、负迁移判定或论文评价口径的科学修改，都应新建分支并升级版本，同时记录结果差异。
