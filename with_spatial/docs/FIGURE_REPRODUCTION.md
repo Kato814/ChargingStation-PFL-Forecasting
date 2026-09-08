@@ -32,6 +32,38 @@ python figures/plot_fig6_scalar_coefficients.py
 
 解释边界：`alpha` 表示共享残差修正幅度，不是预测精度指标。不能把更大的 `alpha` 解释为更高预测精度。
 
+## 图7：风险参数敏感性
+
+脚本：
+
+`figures/plot_fig7_risk_sensitivity.py`
+
+运行：
+
+```bash
+python figures/plot_fig7_risk_sensitivity.py
+```
+
+数据来源：论文补充实验的风险参数敏感性证据，已以轻量CSV固定在：
+
+- `results_reference/risk_sensitivity_grid.csv`：5×5完整网格；
+- `results_reference/delta_sensitivity_beta_003.csv`：固定 `beta=0.03` 的 `delta` 切片；
+- `results_reference/beta_sensitivity_delta_m002.csv`：固定 `delta=-0.02` 的 `beta` 切片。
+
+网格取值：
+
+- `delta ∈ {-0.05, -0.02, 0, 0.02, 0.05}`；
+- `beta ∈ {0, 0.01, 0.03, 0.05, 0.10}`。
+
+论文选取点为 `delta=-0.02`、`beta=0.03`。图中同时展示聚合WAPE和最坏站点相对退化率，用于说明邻近参数范围内的精度—风险变化。
+
+默认输出：
+
+- `figures_generated/fig7_risk_sensitivity.png`
+- `figures_generated/fig7_risk_sensitivity.svg`
+
+重要来源边界：该敏感性网格来自论文补充实验证据包，不是由当前V1.0主流程在每次 `reproduce_all.py` 中重新搜索得到。Git仓库保存原始轻量敏感性CSV和绘图脚本，以保证论文图可追踪；如果未来要重新运行完整参数网格，应新建独立实验脚本和结果版本，不能静默替换这些冻结证据。
+
 ## 图8：不同类型目标站聚合WAPE相对改善
 
 脚本：
@@ -108,4 +140,4 @@ python figures/plot_fig9_typical_curves.py --start-date 2023-02-15
 - 主文图默认输出600 dpi PNG，同时保留SVG矢量版本；
 - 图内不放论文图题，图题由Word正文管理。
 
-如果仅修改配色、字号、线宽或版面，不改变绘图数据和计算口径，可视为排版维护；如果修改数据筛选、指标定义或典型站点/日期的科学选择原则，应在Changelog中记录。
+如果仅修改配色、字号、线宽或版面，不改变绘图数据和计算口径，可视为排版维护；如果修改数据筛选、指标定义、风险参数网格或典型站点/日期的科学选择原则，应在Changelog中记录。
