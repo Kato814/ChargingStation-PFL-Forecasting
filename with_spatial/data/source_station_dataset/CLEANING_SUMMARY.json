@@ -1,0 +1,20 @@
+{
+  "source_root": "D:\\Kato‘s Files\\EV_Stations\\站点数据集_three_type_cleaned_deepsmooth_v2_adjcap160_20260710",
+  "target_root": "D:\\Kato‘s Files\\EV_Stations\\站点数据集_three_type_cleaned_gaprepaired_smooth_20260710",
+  "station_count": 40,
+  "row_count": 2085120,
+  "point_log_rows": 1341819,
+  "change_threshold_kw": 0.1,
+  "gap_count": 424,
+  "gap_repaired_points": 1974,
+  "filled_energy_kwh": 20424.1112455552,
+  "changed_points_ge_0p1kw": 1341819,
+  "all_quality_gates_passed": true,
+  "numerical_core_sha256": "004c1bf6a76e16dabad4794cad16ec63414b2f4f10bbba64fdc795bffd6032da",
+  "station_type_counts": {
+    "pure_fast": 7,
+    "mixed_ac_dc": 9,
+    "pure_slow": 24
+  },
+  "note": "The complete frozen archive contains the full parameter block and data files. Git history keeps this compact provenance record for long-term traceability."
+}
