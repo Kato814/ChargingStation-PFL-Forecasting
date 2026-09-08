@@ -1,0 +1,8 @@
+method,WAPE,nRMSE,source,raw_prediction_available
+前日负荷基准,0.10042573373583695,0.06975904123138603,locked_oof_predictions,True
+FedAvg残差,0.10161459174758193,0.07033751175461174,locked_oof_predictions,True
+全参数微调,0.10873053151338084,0.0746735993842494,locked_oof_predictions,True
+本地MLP,0.10376417109992134,0.07131901258620356,locked_oof_predictions,True
+本地岭回归,0.1025,0.0727,supplemental_locked_result,False
+pFedMe微调,0.10420431053961007,0.07152138777507201,locked_oof_predictions,True
+本文方法,0.09357050219189945,0.06608295125576832,locked_oof_predictions,True
