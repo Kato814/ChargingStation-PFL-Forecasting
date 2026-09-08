@@ -27,7 +27,7 @@ The following files are restored from the authoritative 539-D archive:
 | `with_spatial/results_reference/oof_predictions_source.csv.gz` | 4,002,934 | `abb8d28757bc40686990ec8cb3a7e35de449984b22c9c64c21ae2476779fbc67` |
 | `with_spatial/results_reproduced/oof_predictions.csv.gz` | 2,174,519 | `70525383ac6359a7c16d071a675141438e771432d4ce063338afb820a7a7bfd1` |
 
-The full source-station payload contains 56 files totaling 217,219,808 bytes. File-level checksums are stored in `with_spatial/data/source_station_dataset/dataset_manifest.csv`; the compact repository-level copy is `with_spatial/data/source_station_dataset_manifest.csv`.
+The complete `source_station_dataset/` directory contains **56 files totaling 217,219,808 bytes**, including `dataset_manifest.csv` itself. Because a manifest cannot hash itself, `dataset_manifest.csv` contains **55 payload entries totaling 217,213,748 bytes**; the manifest file is 6,060 bytes. File-level payload checksums are stored in `with_spatial/data/source_station_dataset/dataset_manifest.csv`, with the summary in `with_spatial/data/source_station_dataset_summary.json`.
 
 ## Files intentionally excluded from normal Git history
 
