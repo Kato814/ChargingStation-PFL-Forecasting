@@ -1,6 +1,48 @@
 # 论文结果图复现说明
 
-本文件只记录 `with_spatial/` 539维权威版本当前维护的结果图。方法框架图（论文图1–图4）由论文排版文件维护，不从数值代码自动生成。
+本文件只记录 `with_spatial/` 539维权威版本当前维护的数值/数据结果图。方法框架图（论文图1–图4）由论文排版文件维护，不从数值代码自动生成。
+
+## 图5：目标站负荷规模及日内形态
+
+脚本：
+
+`figures/plot_fig5_target_characteristics.py`
+
+运行：
+
+```bash
+python figures/plot_fig5_target_characteristics.py
+```
+
+图5(a)数据来源：恢复后的 `data/source_station_dataset/{train,validation,test}/station_daily_features.csv`。
+
+处理方式：
+
+1. 按论文目标站映射选取F01、F02、S01–S06、M01、M02；
+2. 每座目标站使用2022-09-01至2023-02-28共181 d的 `daily_total_load`；
+3. 计算日均充电量并采用对数纵轴展示不同站点的数量级差异；
+4. 柱体按快充、慢充、混合三类着色。
+
+图5(b)数据来源：恢复后的10座目标站完整5 min `station_processed_5min/<station_id>.csv`。
+
+处理方式：
+
+1. 将每3个5 min点组成一个15 min时段；
+2. 对每座站点跨181 d计算96点平均日内曲线；
+3. 每座站点用自身平均日内曲线最大值归一化；
+4. 在快充2站、慢充6站、混合2站内分别计算同一时段的均值、最小值和最大值；
+5. 类型均值作为主曲线，类型内目标站最小—最大范围作为浅色带。
+
+该算法可复现当前论文图5(b)所展示的三类代表性平均日内形态和类型内差异范围。
+
+默认输出：
+
+- `figures_generated/fig5a_station_daily_energy.png`
+- `figures_generated/fig5a_station_daily_energy.svg`
+- `figures_generated/fig5a_station_daily_energy_data.csv`
+- `figures_generated/fig5b_type_profiles.png`
+- `figures_generated/fig5b_type_profiles.svg`
+- `figures_generated/fig5b_type_profiles_data.csv`
 
 ## 图6：不同目标站滚动标量系数分布
 
