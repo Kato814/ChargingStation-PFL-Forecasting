@@ -44,6 +44,7 @@ def main() -> None:
     run([py, "tests/test_raw_feature_builder_sample.py"])
     run([py, "tests/test_figure_inputs.py"])
     run([py, "figures/plot_fig6_scalar_coefficients.py"])
+    run([py, "figures/plot_fig7_risk_sensitivity.py"])
     run([py, "figures/plot_fig8_type_improvement.py"])
     run([py, "figures/plot_fig9_typical_curves.py"])
 
