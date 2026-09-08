@@ -1,0 +1,11 @@
+{
+  "n_prediction_days": 44,
+  "mean_daily_WAPE_difference": -0.011563263932537487,
+  "circular_mbb_95_low": -0.016490703504466714,
+  "circular_mbb_95_high": -0.006297401202770872,
+  "block_length_days": 7,
+  "newey_west_lag": 7,
+  "newey_west_standard_error": 0.0028954757889947617,
+  "newey_west_z": -3.99356263882005,
+  "newey_west_p_two_sided": 6.508787366443864e-05
+}
