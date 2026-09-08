@@ -1,0 +1,12 @@
+{
+  "station_count": 40,
+  "feature_names_equal": true,
+  "date_equal": true,
+  "station_type_equal": true,
+  "max_abs_diff": {
+    "x": 0.0,
+    "y_residual": 0.0,
+    "baseline": 0.0,
+    "y_true": 0.0
+  }
+}
