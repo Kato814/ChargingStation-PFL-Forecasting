@@ -28,6 +28,7 @@ def main() -> None:
 
     if not args.skip_figures:
         run([py, 'figures/plot_fig6_scalar_coefficients.py'])
+        run([py, 'figures/plot_fig7_risk_sensitivity.py'])
         run([py, 'figures/plot_fig8_type_improvement.py'])
         run([py, 'figures/plot_fig9_typical_curves.py'])
 
