@@ -1,0 +1,12 @@
+start_index,end_index,count,feature_group,description
+0,95,96,previous_day_profile,Previous-day 96-point load profile
+96,191,96,historical_summary,Recent 7-day mean 96-point profile
+192,287,96,historical_summary,Same-day-of-week historical 96-point profile
+288,383,96,historical_summary,Same-day-type historical 96-point profile
+384,479,96,similar_day_profile,Similar-day 96-point profile
+480,510,31,historical_summary,Calendar and scalar historical summary features
+511,515,5,station_static,Charging-equipment and rated-power static features
+516,523,8,spatial_poi,POI features within 1 km and 3 km
+524,527,4,spatial_static,Longitude latitude zone station count and zone area
+528,532,5,calendar,Day-ahead calendar and holiday features
+533,538,6,station_type,Model station-type and raw station-type indicators
