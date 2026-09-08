@@ -23,10 +23,12 @@ The following maintenance records were added without changing the scientific imp
 - promoted `with_spatial/` to the explicit authoritative repository priority;
 - added complete paper metric definitions and result-provenance/evidence-level documentation;
 - added the frozen 40-station train/validation/test split, source-data cleaning provenance and full source-file SHA-256 manifest;
+- clarified source-dataset manifest semantics: 55 payload entries plus the manifest itself = 56 directory files;
 - added 539-D feature-group index ranges and a tool to export the exact ordered feature schema from the restored frozen cache;
 - added frozen archive/package/verification checksum records under `archive/`;
-- documented figure reproduction for the scalar-coefficient, type-improvement and representative-curve figures;
-- added a long-term GitHub branching/versioning/maintenance guide;
+- added Fig. 5 source-data reproduction, Fig. 6 scalar-coefficient reproduction, Fig. 7 frozen risk-sensitivity evidence/plotting, Fig. 8 type-improvement reproduction and Fig. 9 representative-curve reproduction;
+- added `PAPER_ARTIFACT_INDEX.md` linking Tables 1–5 and Figs. 5–9 to code/data sources;
+- added a long-term GitHub branching/versioning/maintenance guide and lightweight metadata CI;
 - tracked private Release upload of the authoritative frozen ZIP in repository Issue #3;
 - corrected archive documentation so the full 5-min payload and large caches remain outside ordinary Git history while retaining exact restore paths and checksums.
 
