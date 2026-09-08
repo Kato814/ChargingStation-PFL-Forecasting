@@ -84,12 +84,13 @@ python verify_package.py
 
 当前仓库维护：
 
+- `figures/plot_fig5_target_characteristics.py`：目标站日均充电量及三类目标站归一化日内形态；
 - `figures/plot_fig6_scalar_coefficients.py`：不同目标站滚动标量系数分布；
 - `figures/plot_fig7_risk_sensitivity.py`：近期表现阈值与累计损失预算敏感性；
 - `figures/plot_fig8_type_improvement.py`：三类目标站聚合WAPE相对改善；
 - `figures/plot_fig9_typical_curves.py`：三类典型目标站连续三日预测曲线，论文推荐窗口为2023-02-15至2023-02-17。
 
-图7敏感性数据来自冻结补充实验证据；其余结果图由主方法折外结果或类型汇总结果直接生成。详细数据来源和复现边界见 `docs/FIGURE_REPRODUCTION.md` 与 `docs/RESULT_PROVENANCE.md`。
+图5由冻结源站点数据构造；图7敏感性数据来自冻结补充实验证据；图6、图8和图9由主方法折外结果或类型汇总结果直接生成。详细数据来源和复现边界见 `docs/FIGURE_REPRODUCTION.md` 与 `docs/RESULT_PROVENANCE.md`。
 
 ## 重要文档
 
@@ -103,11 +104,12 @@ python verify_package.py
 6. `docs/FOLD_PROTOCOL.md`：五折目标站轮换与折级参数；
 7. `docs/METRIC_DEFINITIONS.md`：论文评价口径；
 8. `docs/RESULT_PROVENANCE.md`：主方法、消融、基线和图件的结果来源；
-9. `docs/RESULTS_BASELINE.md`：V1.0冻结数值基线；
-10. `docs/FIGURE_REPRODUCTION.md`：论文结果图数据来源与绘图入口；
-11. `docs/ENVIRONMENT_AND_NUMERICS.md`：环境与浮点容差；
-12. `docs/REPRODUCTION_GUIDE.md`：端到端复现步骤；
-13. `docs/GITHUB_MAINTENANCE_GUIDE.md`：后续版本和分支管理。
+9. `docs/PAPER_ARTIFACT_INDEX.md`：论文表1–表5、图5–图9与代码/数据对应关系；
+10. `docs/RESULTS_BASELINE.md`：V1.0冻结数值基线；
+11. `docs/FIGURE_REPRODUCTION.md`：论文结果图数据来源与绘图入口；
+12. `docs/ENVIRONMENT_AND_NUMERICS.md`：环境与浮点容差；
+13. `docs/REPRODUCTION_GUIDE.md`：端到端复现步骤；
+14. `docs/GITHUB_MAINTENANCE_GUIDE.md`：后续版本和分支管理。
 
 ## 大文件与长期归档
 
