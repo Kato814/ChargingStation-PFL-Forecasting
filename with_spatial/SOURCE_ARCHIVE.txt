@@ -1,0 +1,7 @@
+Source archive: ThreeType_ChargingLoadForecasting_FINAL_OPTIMIZED_20260715(1).zip
+SHA-256: ec5618f9a979049c57659c51716929514a6897d829652ba626e8b10a1e1be8ed
+Role: frozen source for the 539-D spatial-input exact-reproduction variant.
+
+Clean paper-code archive derived from this source:
+ChargingStation_PFL_Paper_Code_WITH_SPATIAL_V1.0.zip
+SHA-256: 8e053ffea7ed6b1274517a5a515d6baef0e14fe7c45230c8ae608cec75b3cc9e
