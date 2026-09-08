@@ -16,6 +16,20 @@ Scientific scope remains identical to the final audited 539-D experiment.
 - documented exact archive SHA-256, restoration policy and numerical environment/tolerance policy;
 - hardened sufficient-statistics equivalence checking to `rtol=0, atol=1e-10` for cross-BLAS portability. This test-only change does not alter model calculations or reported results.
 
+### GitHub archive hardening — 2026-09-08
+
+The following maintenance records were added without changing the scientific implementation or frozen V1.0 results:
+
+- promoted `with_spatial/` to the explicit authoritative repository priority;
+- added complete paper metric definitions and result-provenance/evidence-level documentation;
+- added the frozen 40-station train/validation/test split, source-data cleaning provenance and full source-file SHA-256 manifest;
+- added 539-D feature-group index ranges and a tool to export the exact ordered feature schema from the restored frozen cache;
+- added frozen archive/package/verification checksum records under `archive/`;
+- documented figure reproduction for the scalar-coefficient, type-improvement and representative-curve figures;
+- added a long-term GitHub branching/versioning/maintenance guide;
+- tracked private Release upload of the authoritative frozen ZIP in repository Issue #3;
+- corrected archive documentation so the full 5-min payload and large caches remain outside ordinary Git history while retaining exact restore paths and checksums.
+
 ## Historical engineering milestones
 
 ### 1.0.0-rc3
