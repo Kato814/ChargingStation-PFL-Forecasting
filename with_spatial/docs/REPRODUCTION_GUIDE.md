@@ -28,6 +28,12 @@ python prepare_inputs.py --rebuild-cache-from-raw
 
 完整重建明显慢于直接读取冻结缓存，日常复现无需重复执行。
 
+如需导出完整539维特征顺序：
+
+```bash
+python tools/export_feature_schema.py
+```
+
 ## 2. 复现论文主方法
 
 ```bash
@@ -62,11 +68,26 @@ python experiments/reproduce_table4_ablation.py
 
 ```bash
 python figures/plot_fig6_scalar_coefficients.py
+python figures/plot_fig7_risk_sensitivity.py
 python figures/plot_fig8_type_improvement.py
 python figures/plot_fig9_typical_curves.py --start-date 2023-02-15
 ```
 
-## 6. 完整核验
+其中图7使用 `results_reference/` 中冻结的风险参数敏感性证据切片和5×5网格，不在本入口中重新搜索25个参数组合。各图来源见 `docs/FIGURE_REPRODUCTION.md`。
+
+## 6. 一键复现
+
+```bash
+python reproduce_all.py
+```
+
+如需在复现完成后继续完整核验：
+
+```bash
+python reproduce_all.py --verify
+```
+
+## 7. 完整核验
 
 ```bash
 python verify_package.py
@@ -86,9 +107,9 @@ python verify_package.py
 - 已废弃评价口径未重新混入论文代码；
 - 源站点数据manifest；
 - 源CSV到539维输入样本等价；
-- 图件输入契约与绘图脚本。
+- 图6/图7/图8/图9输入契约与绘图脚本。
 
-## 7. 更新发布清单
+## 8. 更新发布清单
 
 在确认所有测试通过后：
 
