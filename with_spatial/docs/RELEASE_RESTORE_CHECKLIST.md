@@ -31,7 +31,10 @@
 python tests/test_source_dataset_manifest.py
 ```
 
-源数据manifest记录56个文件，总大小217,219,808 bytes。
+源站点数据目录共56个文件、217,219,808 bytes，其中 `dataset_manifest.csv` 本身大小6060 bytes。manifest不能对自身做哈希，因此它实际记录55个数据payload文件，payload合计217,213,748 bytes。Git维护记录见：
+
+- `data/source_station_dataset/dataset_manifest.csv`
+- `data/source_station_dataset_summary.json`
 
 ## 4. 验证源CSV到539维输入
 
@@ -46,6 +49,12 @@ python prepare_inputs.py --rebuild-cache-from-raw
 ```
 
 默认不覆盖冻结缓存。
+
+如需导出完整539维特征名称和顺序：
+
+```bash
+python tools/export_feature_schema.py
+```
 
 ## 5. 运行论文主链
 
@@ -62,3 +71,13 @@ python verify_package.py
 ```
 
 浮点充分统计量跨环境比较使用 `rtol=0, atol=1e-10`；离散字段、站点/日期键和资格状态必须完全一致。
+
+## 7. GitHub轻量元数据检查
+
+无需恢复大型数据即可运行：
+
+```bash
+python tools/validate_repository_metadata.py
+```
+
+该检查用于验证版本号、档案SHA、折协议、539维分组、40站划分、源数据manifest计数和风险敏感性证据等长期归档元数据。
