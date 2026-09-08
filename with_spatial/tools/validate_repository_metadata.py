@@ -36,6 +36,7 @@ def main() -> None:
         ROOT / "data/feature_group_ranges_539.csv",
         ROOT / "data/source_station_dataset/station_split.csv",
         ROOT / "data/source_station_dataset/dataset_manifest.csv",
+        ROOT / "data/source_station_dataset_summary.json",
         ROOT / "results_reference/risk_sensitivity_grid.csv",
         ROOT / "results_reference/delta_sensitivity_beta_003.csv",
         ROOT / "results_reference/beta_sensitivity_delta_m002.csv",
@@ -73,8 +74,17 @@ def main() -> None:
     assert sum(row["split"] == "validation" for row in station_split) == 5
     assert sum(row["split"] == "test" for row in station_split) == 5
 
+    # The dataset directory contains 56 files in total INCLUDING dataset_manifest.csv.
+    # The manifest cannot hash itself, so it contains 55 payload entries.
     manifest = read_csv(ROOT / "data/source_station_dataset/dataset_manifest.csv")
-    assert len(manifest) == 56, len(manifest)
+    assert len(manifest) == 55, len(manifest)
+    assert sum(int(row["size_bytes"]) for row in manifest) == 217_213_748
+
+    source_summary = json.loads((ROOT / "data/source_station_dataset_summary.json").read_text(encoding="utf-8"))
+    assert int(source_summary["directory_file_count_including_manifest"]) == 56
+    assert int(source_summary["manifest_entries"]) == 55
+    assert int(source_summary["payload_bytes_excluding_manifest"]) == 217_213_748
+    assert int(source_summary["directory_bytes_including_manifest"]) == 217_219_808
 
     risk_grid = read_csv(ROOT / "results_reference/risk_sensitivity_grid.csv")
     assert len(risk_grid) == 25
