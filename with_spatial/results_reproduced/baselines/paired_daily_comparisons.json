@@ -1,0 +1,57 @@
+{
+  "前日负荷基准": {
+    "n_prediction_days": 44,
+    "mean_daily_WAPE_difference": -0.011563263932537492,
+    "circular_mbb_95_low": -0.016490703504466735,
+    "circular_mbb_95_high": -0.006297401202770892,
+    "block_length_days": 7,
+    "newey_west_lag": 7,
+    "newey_west_standard_error": 0.0028954757889947604,
+    "newey_west_z": -3.9935626388200536,
+    "newey_west_p_two_sided": 6.508787366443779e-05
+  },
+  "FedAvg残差": {
+    "n_prediction_days": 44,
+    "mean_daily_WAPE_difference": -0.012989780204685115,
+    "circular_mbb_95_low": -0.017935458534253663,
+    "circular_mbb_95_high": -0.007707265898986418,
+    "block_length_days": 7,
+    "newey_west_lag": 7,
+    "newey_west_standard_error": 0.0025271825822914653,
+    "newey_west_z": -5.1400244270862805,
+    "newey_west_p_two_sided": 2.747027544917708e-07
+  },
+  "全参数微调": {
+    "n_prediction_days": 44,
+    "mean_daily_WAPE_difference": -0.013933482980145467,
+    "circular_mbb_95_low": -0.02853209192903344,
+    "circular_mbb_95_high": -0.002021486389035354,
+    "block_length_days": 7,
+    "newey_west_lag": 7,
+    "newey_west_standard_error": 0.0074884241034269714,
+    "newey_west_z": -1.8606695865114005,
+    "newey_west_p_two_sided": 0.06279085130964862
+  },
+  "本地MLP": {
+    "n_prediction_days": 44,
+    "mean_daily_WAPE_difference": -0.01136173249825394,
+    "circular_mbb_95_low": -0.02279673800458469,
+    "circular_mbb_95_high": -0.0024908043344778097,
+    "block_length_days": 7,
+    "newey_west_lag": 7,
+    "newey_west_standard_error": 0.005529654549982301,
+    "newey_west_z": -2.0546911919281294,
+    "newey_west_p_two_sided": 0.039908841239895874
+  },
+  "pFedMe微调": {
+    "n_prediction_days": 44,
+    "mean_daily_WAPE_difference": -0.009711810890273499,
+    "circular_mbb_95_low": -0.01923171161394556,
+    "circular_mbb_95_high": -0.0014630366945719137,
+    "block_length_days": 7,
+    "newey_west_lag": 7,
+    "newey_west_standard_error": 0.004784486123469009,
+    "newey_west_z": -2.02985454229553,
+    "newey_west_p_two_sided": 0.04237132692451256
+  }
+}
