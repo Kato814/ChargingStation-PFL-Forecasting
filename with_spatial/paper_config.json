@@ -1,0 +1,17 @@
+{
+  "train_period": ["2022-09-02", "2022-12-15"],
+  "personalization_history_start": "2022-10-17",
+  "test_period": ["2023-01-16", "2023-02-28"],
+  "station_types": ["pure_fast", "pure_slow", "mixed_ac_dc"],
+  "target_pairs": [[1009,1120],[1011,1307],[1349,1566],[1599,1686],[2213,2255]],
+  "fold_parameters": {
+    "fold_1": {"ridge_alpha":100.0,"type_weight":0.5,"history_days":30,"regularization":0.0},
+    "fold_2": {"ridge_alpha":100.0,"type_weight":0.5,"history_days":30,"regularization":0.0},
+    "fold_3": {"ridge_alpha":1000.0,"type_weight":0.0,"history_days":30,"regularization":0.5},
+    "fold_4": {"ridge_alpha":1000.0,"type_weight":1.0,"history_days":30,"regularization":0.5},
+    "fold_5": {"ridge_alpha":1000.0,"type_weight":0.0,"history_days":14,"regularization":0.5}
+  },
+  "group_total_correction": {"history_days":5,"regularization":0.0,"coefficient_max":1.0,"min_history_days":5},
+  "negative_transfer": {"history_days":10,"min_history_days":3,"relative_gain_margin":-0.02,"regret_budget":0.03,"regret_warmup_days":7},
+  "baseline_protocols": {"neural_local_update_history_days":30,"local_ridge_history_days":60,"neural_architecture":"539-128-128-96 residual MLP","neural_seeds":[20260612,20260613,20260614]}
+}

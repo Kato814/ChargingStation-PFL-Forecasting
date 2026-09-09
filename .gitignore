@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Reproduced large outputs
+**/results_reproduced/oof_predictions.csv.gz
+**/results_reproduced/*.tmp
+
+# Generated paper figures/data are reproducible and not part of normal Git history
+**/figures_generated/
+
+# Large binary caches: restore from frozen archive / release
+**/data/*.pkl
+
+# Full 5-min station source files are archived separately
+**/data/source_station_dataset/**/station_processed_5min/*.csv
+
+# Frozen ZIP archives are stored as release assets, not normal Git history
+*.zip
+*.7z
+*.rar

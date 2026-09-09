@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "variant": "WITH_SPATIAL_539D",
+  "compiled_python_files": 36,
+  "feature_dimension": 539,
+  "record_count": 42240,
+  "system_WAPE": 0.09357050219189945,
+  "nRMSE": 0.06608295125576832,
+  "pooled_WAPE": 0.21098808555609647,
+  "improved_stations": 7,
+  "max_station_relative_degradation": 0.015618088958722623,
+  "paired_daily_mean_difference": -0.011563263932537487
+}

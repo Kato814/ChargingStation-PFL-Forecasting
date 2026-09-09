@@ -1,0 +1,3 @@
+Version: 1.0.0
+Variant: WITH_SPATIAL_539D
+Status: FROZEN_PAPER_RECORD

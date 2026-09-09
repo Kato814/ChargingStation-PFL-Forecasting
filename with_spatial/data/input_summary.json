@@ -1,0 +1,9 @@
+{
+  "station_count": 40,
+  "feature_dimension": 539,
+  "output_dimension": 96,
+  "training_sample_count": 4200,
+  "spatial_feature_count": 12,
+  "statistics_output": "runtime-dependent",
+  "raw_cache_rebuild_requested": false
+}

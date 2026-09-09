@@ -1,0 +1,3 @@
+Version: 1.0.0
+Variant: NO_SPATIAL_527D
+Role: paper-aligned input variant; matched fold parameters

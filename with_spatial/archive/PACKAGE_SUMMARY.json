@@ -1,0 +1,9 @@
+{
+  "package": "ChargingStation_PFL_Paper_Code_WITH_SPATIAL",
+  "version": "1.0.0",
+  "variant": "WITH_SPATIAL_539D",
+  "file_count_excluding_manifest_files": 139,
+  "payload_bytes_excluding_manifest_files": 382285718,
+  "verification_status": "PASS",
+  "source_archive_sha256": "ec5618f9a979049c57659c51716929514a6897d829652ba626e8b10a1e1be8ed"
+}
