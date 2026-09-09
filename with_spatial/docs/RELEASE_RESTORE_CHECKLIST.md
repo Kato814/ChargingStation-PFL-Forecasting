@@ -39,6 +39,8 @@ GitHub Release记录的ZIP asset大小为145,516,950 bytes，asset digest为：
 
 - `results_reproduced/oof_predictions.csv.gz`（也可由主流程重新生成）
 
+恢复完整源数据目录时，应保留冻结包中的 `CLEANING_SUMMARY.json`、`README.md`、`balanced_split_mapping.csv` 和 `dataset_manifest.csv` 原始字节内容；不要用Git轻量记录覆盖它们后再执行字节级manifest检查。
+
 ## 3. 验证源数据
 
 ```bash
@@ -84,7 +86,7 @@ python run_paper_pipeline.py
 python verify_package.py
 ```
 
-浮点充分统计量跨环境比较使用 `rtol=0, atol=1e-10`；离散字段、站点/日期键和资格状态必须完全一致。
+R1返修分支在跨Windows/Linux环境进行浮点充分统计量重建时使用 `rtol=0, atol=1e-9`；离散字段、站点/日期键和资格状态仍必须完全一致。该容差只用于跨平台维护核验，不改变V1.0科学输入、模型、参数或预测结果。详见 `ENVIRONMENT_AND_NUMERICS.md`。
 
 ## 7. GitHub轻量元数据检查
 
