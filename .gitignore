@@ -11,9 +11,12 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Reproduced outputs
+# Reproduced large outputs
 **/results_reproduced/oof_predictions.csv.gz
 **/results_reproduced/*.tmp
+
+# Generated paper figures/data are reproducible and not part of normal Git history
+**/figures_generated/
 
 # Large binary caches: restore from frozen archive / release
 **/data/*.pkl
