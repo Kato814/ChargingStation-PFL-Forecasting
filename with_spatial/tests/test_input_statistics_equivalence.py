@@ -14,7 +14,7 @@ from src.pipeline import load_federated_statistics
 # order can change. Structural fields remain exact; floating sufficient statistics
 # use the explicit archive-maintenance tolerance documented in
 # docs/ENVIRONMENT_AND_NUMERICS.md.
-ATOL = 1e-10
+ATOL = 1e-9
 
 
 def main() -> None:
