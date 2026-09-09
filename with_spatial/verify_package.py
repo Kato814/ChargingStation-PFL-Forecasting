@@ -8,6 +8,8 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+STATISTICS_EQUIVALENCE_ATOL = 1e-9
+STATISTICS_EQUIVALENCE_RTOL = 0.0
 
 
 def run(cmd: list[str]) -> None:
@@ -62,8 +64,8 @@ def main() -> None:
         "improved_stations": summary["improved_stations"],
         "max_station_relative_degradation": summary["max_station_relative_degradation"],
         "paired_daily_mean_difference": summary["paired_daily_statistics"]["mean_daily_WAPE_difference"],
-        "statistics_equivalence_atol": 1e-10,
-        "statistics_equivalence_rtol": 0.0,
+        "statistics_equivalence_atol": STATISTICS_EQUIVALENCE_ATOL,
+        "statistics_equivalence_rtol": STATISTICS_EQUIVALENCE_RTOL,
     }
     (ROOT / "VERIFICATION.json").write_text(json.dumps(verification, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(verification, ensure_ascii=False, indent=2))
