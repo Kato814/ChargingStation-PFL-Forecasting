@@ -8,6 +8,11 @@ The corresponding frozen binary archive is:
 
 - `ChargingStation_PFL_Paper_Code_WITH_SPATIAL_V1.0.zip`
 - SHA-256: `8e053ffea7ed6b1274517a5a515d6baef0e14fe7c45230c8ae608cec75b3cc9e`
+- Private Release: `https://github.com/Kato814/ChargingStation-PFL-Forecasting/releases/tag/v1.0-archive`
+- Release asset size: 145,516,950 bytes
+- GitHub asset digest: `sha256:8e053ffea7ed6b1274517a5a515d6baef0e14fe7c45230c8ae608cec75b3cc9e`
+
+The Release also stores `ChargingStation_PFL_Paper_Code_WITH_SPATIAL_V1.0.zip.sha256`.
 
 The earlier final optimized source package from which the clean paper-code archive was reconstructed is:
 
@@ -54,7 +59,9 @@ The paper daily paired statistic preserves the five independent two-station depl
 
 ## Large-file policy
 
-The normal Git tree intentionally excludes the full 5 min station CSV payload, `clients_with_spatial.pkl`, `federated_statistics_with_spatial.pkl`, and the frozen ZIP itself. Restore those files from the matching frozen archive before running full end-to-end reproduction. Lightweight manifests, schemas, checksums, code, tests, result summaries and figure scripts belong in Git.
+The normal Git tree intentionally excludes the full 5 min station CSV payload, `clients_with_spatial.pkl`, `federated_statistics_with_spatial.pkl`, and the frozen ZIP itself. Restore those files from the SHA-matched Private Release before running full end-to-end reproduction. Lightweight manifests, schemas, checksums, code, tests, result summaries and figure scripts belong in Git.
+
+The combination of `main` plus the `v1.0-archive` Private Release is the closed long-term V1.0 record.
 
 ## Change policy
 

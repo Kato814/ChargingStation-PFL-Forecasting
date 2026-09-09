@@ -8,13 +8,18 @@ Normal Git history intentionally excludes large binary caches, full 5-min statio
 
 - `ChargingStation_PFL_Paper_Code_WITH_SPATIAL_V1.0.zip`
   - SHA-256: `8e053ffea7ed6b1274517a5a515d6baef0e14fe7c45230c8ae608cec75b3cc9e`
+  - Private Release: `https://github.com/Kato814/ChargingStation-PFL-Forecasting/releases/tag/v1.0-archive`
+  - Release asset size: 145,516,950 bytes
+  - GitHub asset digest: `sha256:8e053ffea7ed6b1274517a5a515d6baef0e14fe7c45230c8ae608cec75b3cc9e`
+
+The same Release also contains `ChargingStation_PFL_Paper_Code_WITH_SPATIAL_V1.0.zip.sha256`.
 
 ### Secondary research archive
 
 - `ChargingStation_PFL_Paper_Code_NO_SPATIAL_V1.0.zip`
   - SHA-256: `7d01668b045ca0c34dc592788d42c79da520d1e721334a85d36cc3a578115014`
 
-The frozen ZIPs contain complete source-station datasets, model-input caches, federated sufficient statistics, reference outputs and verification records. They should be attached to a private GitHub Release rather than committed directly to Git history. The authoritative 539-D archive should be handled first; the secondary no-spatial archive can be attached separately after the 539-D record is closed.
+The authoritative 539-D frozen ZIP contains the complete source-station dataset, model-input cache, federated sufficient statistics, reference outputs and verification records. It is intentionally stored as a private Release asset rather than in ordinary Git history. The secondary no-spatial archive remains separately managed.
 
 ## WITH_SPATIAL large-file checksums
 
@@ -41,6 +46,6 @@ The repository keeps schemas/feature documentation, manifests, checksums, code, 
 
 ## Restoration
 
-Before full reproduction, restore excluded files from the SHA-matched frozen archive to their documented paths. For the authoritative variant follow `with_spatial/docs/RELEASE_RESTORE_CHECKLIST.md`.
+For full reproduction, download the authoritative ZIP from the private `v1.0-archive` Release, verify its SHA-256, and restore the excluded files to their documented paths. Follow `with_spatial/docs/RELEASE_RESTORE_CHECKLIST.md`.
 
-The private Release upload and checksum re-verification of the authoritative 539-D archive are tracked in repository Issue #3.
+The authoritative 539-D remote archive task previously tracked by Issue #3 is complete once this documentation update is merged.

@@ -19,6 +19,12 @@ SHA-256:
 
 `8e053ffea7ed6b1274517a5a515d6baef0e14fe7c45230c8ae608cec75b3cc9e`
 
+Private GitHub Release:
+
+`https://github.com/Kato814/ChargingStation-PFL-Forecasting/releases/tag/v1.0-archive`
+
+The release contains both the complete ZIP and its `.sha256` sidecar. GitHub reports the ZIP asset digest as the same SHA-256 above.
+
 The earlier final optimized source archive has SHA-256:
 
 `ec5618f9a979049c57659c51716929514a6897d829652ba626e8b10a1e1be8ed`
@@ -28,7 +34,7 @@ The earlier final optimized source archive has SHA-256:
 - Do not mix caches, sufficient statistics, reproduced outputs or result claims between the two variants.
 - Do not commit the full 5 min source station payload, large pickle caches or frozen ZIP archives into ordinary Git history.
 - Keep maintainable source code, configuration, tests, documentation, manifests/checksums, lightweight results and figure-generation scripts in Git.
-- Store complete frozen archives separately (recommended: a private GitHub Release) and verify them by SHA-256 before restoration.
+- Restore the authoritative binary archive from the private `v1.0-archive` Release and verify SHA-256 before use.
 - The official daily paired evaluation preserves the five independent two-station deployment-group boundaries; no retired alternative daily aggregation metric belongs in the paper-code record.
 - Scientific changes must use a new branch/version. Do not silently overwrite the V1.0 exact-reproduction record.
 

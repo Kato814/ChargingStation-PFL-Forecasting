@@ -16,6 +16,9 @@
 
 - `ChargingStation_PFL_Paper_Code_WITH_SPATIAL_V1.0.zip`
 - SHA-256: `8e053ffea7ed6b1274517a5a515d6baef0e14fe7c45230c8ae608cec75b3cc9e`
+- Private Release: `https://github.com/Kato814/ChargingStation-PFL-Forecasting/releases/tag/v1.0-archive`
+
+Release中已保存完整ZIP及配套 `.sha256` 文件；GitHub记录的ZIP asset digest与上述SHA-256一致。
 
 原最终优化源包：
 
@@ -24,7 +27,7 @@
 
 ## 快速运行
 
-先从匹配SHA-256的冻结归档恢复完整 `data/` 与 `results_reference/oof_predictions_source.csv.gz`，然后：
+先从Private Release下载并校验冻结ZIP，恢复完整 `data/` 与 `results_reference/oof_predictions_source.csv.gz`，然后：
 
 ```bash
 python prepare_inputs.py
@@ -115,7 +118,7 @@ python verify_package.py
 
 完整40站源数据、539维客户端缓存、联邦充分统计量、逐点锁定预测和冻结ZIP不进入普通Git历史。Git中保留文件级manifest、SHA-256、恢复路径和轻量结果。
 
-完整冻结ZIP应作为私有GitHub Release附件保存；该任务由仓库Issue #3跟踪。详见 `../docs/LARGE_FILES.md` 与 `docs/RELEASE_RESTORE_CHECKLIST.md`。
+完整冻结ZIP已经保存到Private GitHub Release `v1.0-archive`。普通Git与Private Release共同构成长期归档链。详见 `../docs/LARGE_FILES.md` 与 `docs/RELEASE_RESTORE_CHECKLIST.md`。
 
 ## 修改规则
 

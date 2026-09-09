@@ -10,6 +10,7 @@
   - `dev/alpha-adaptation-v2`
   - `dev/group-correction-weighted`
   - `dev/negative-transfer-v2`
+  - `revision/r1-202609`
 
 不得直接在V1.0稳定记录上覆盖科学结果。
 
@@ -35,7 +36,8 @@
 - 不改变输出的代码整理；
 - 浮点比较从位级相等改为合理容差；
 - 路径、CLI帮助、日志增强；
-- 只改变绘图外观且不改变绘图数据。
+- 只改变绘图外观且不改变绘图数据；
+- Release链接、归档状态和校验信息更新。
 
 即使不升科学版本，也应通过现有测试并记录重要维护变更。
 
@@ -79,7 +81,7 @@ python verify_package.py
 
 文档/维护型PR也应说明是否触及冻结数值、SHA、数据路径或恢复规则。
 
-## 7. 冻结包
+## 7. 冻结包与Private Release
 
 权威V1.0归档：
 
@@ -89,4 +91,10 @@ SHA-256：
 
 `8e053ffea7ed6b1274517a5a515d6baef0e14fe7c45230c8ae608cec75b3cc9e`
 
-完整恢复步骤见 `RELEASE_RESTORE_CHECKLIST.md`。私有GitHub Release附件上传与下载后校验由仓库 **Issue #3** 跟踪；在该远程托管步骤完成前，本地冻结ZIP及其SHA-256仍是完整二进制恢复依据。
+Private Release：
+
+`https://github.com/Kato814/ChargingStation-PFL-Forecasting/releases/tag/v1.0-archive`
+
+截至2026-09-09，完整ZIP和 `.sha256` 文件已经上传，GitHub记录的ZIP asset digest与上述SHA-256一致。完整恢复步骤见 `RELEASE_RESTORE_CHECKLIST.md`。
+
+后续返修或新实验需要完整数据/缓存时，应从该Release恢复V1.0档案，再在新的revision/dev分支中工作，不得修改V1.0冻结ZIP本身。
