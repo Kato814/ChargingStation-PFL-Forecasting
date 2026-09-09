@@ -4,13 +4,27 @@
 
 ## 1. 获取冻结包
 
-文件：`ChargingStation_PFL_Paper_Code_WITH_SPATIAL_V1.0.zip`
+Private GitHub Release：
+
+`https://github.com/Kato814/ChargingStation-PFL-Forecasting/releases/tag/v1.0-archive`
+
+文件：
+
+`ChargingStation_PFL_Paper_Code_WITH_SPATIAL_V1.0.zip`
+
+配套校验文件：
+
+`ChargingStation_PFL_Paper_Code_WITH_SPATIAL_V1.0.zip.sha256`
 
 期望 SHA-256：
 
 `8e053ffea7ed6b1274517a5a515d6baef0e14fe7c45230c8ae608cec75b3cc9e`
 
-如果从GitHub Release或其他备份位置下载，首先核验SHA-256，不匹配时不得用于复现。
+GitHub Release记录的ZIP asset大小为145,516,950 bytes，asset digest为：
+
+`sha256:8e053ffea7ed6b1274517a5a515d6baef0e14fe7c45230c8ae608cec75b3cc9e`
+
+下载后仍应在本地再次计算SHA-256；不匹配时不得用于复现。
 
 ## 2. 恢复大文件
 
@@ -23,7 +37,7 @@
 
 若希望执行回归测试，还应恢复：
 
-- `results_reproduced/oof_predictions.csv.gz`（可由主流程重新生成）
+- `results_reproduced/oof_predictions.csv.gz`（也可由主流程重新生成）
 
 ## 3. 验证源数据
 
@@ -81,3 +95,7 @@ python tools/validate_repository_metadata.py
 ```
 
 该检查用于验证版本号、档案SHA、折协议、539维分组、40站划分、源数据manifest计数和风险敏感性证据等长期归档元数据。
+
+## 8. 长期归档状态
+
+截至2026-09-09，权威539维V1.0完整ZIP及`.sha256`已上传到Private GitHub Release `v1.0-archive`。普通Git用于维护代码与轻量证据；Release用于完整二进制恢复。二者共同构成长期归档记录。
