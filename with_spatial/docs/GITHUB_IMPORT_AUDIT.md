@@ -2,10 +2,10 @@
 
 ## 当前定位
 
-GitHub仓库保存可维护、可审阅的论文代码和轻量证据；冻结ZIP保存完整二进制数据、缓存与逐点结果。两者职责不同：
+GitHub仓库保存可维护、可审阅的论文代码和轻量证据；Private Release保存完整冻结ZIP及校验文件。两者职责不同：
 
 - Git仓库：后续阅读、修改、代码审查、差异追踪；
-- V1.0冻结ZIP：历史精确恢复与完整数据证据。
+- Private Release `v1.0-archive`：V1.0完整二进制恢复与完整数据证据。
 
 `with_spatial/` 539维精确复现版是本仓库的权威论文结果记录；`no_spatial/` 仅作为后续研究版本独立保留。
 
@@ -28,14 +28,13 @@ GitHub仓库保存可维护、可审阅的论文代码和轻量证据；冻结ZI
 
 ## 最终仓库审查结论
 
-本次最终审查重点检查了目录结构、路径引用、重复记录、过时说明、归档边界和CI状态。结论如下：
+最终审查重点检查目录结构、路径引用、重复记录、过时说明、归档边界和CI状态。结论如下：
 
 - 未发现需要删除的重复核心实现；`with_spatial/` 与 `no_spatial/` 的相似文件属于有意的版本隔离，不合并；
 - `SOURCE_ARCHIVE.txt`、`archive/` 和详细归档文档分别承担快速识别、机器校验和人工说明职责，属于有意分层，不视为冗余；
 - 源数据外层manifest与冻结数据目录内manifest用途不同，已在大文件与恢复文档中区分；
 - 论文图5—图9、表1—表5和对应代码/数据路径已由 `PAPER_ARTIFACT_INDEX.md` 统一索引；
-- 原先过时的“仍在导入”“Issue #2”等说明已在最终审查中清理；
-- `import-v1.0` 只承担一次性V1.0导入，合并后稳定记录以 `main` 为准。
+- `main` 已成为稳定V1.0维护基线，`import-v1.0` 仅保留为历史导入分支。
 
 ## Git中有意不保存的内容
 
@@ -51,7 +50,7 @@ GitHub仓库保存可维护、可审阅的论文代码和轻量证据；冻结ZI
 
 ## 冻结二进制权威性
 
-V1.0历史精确恢复时，以以下ZIP为二进制权威记录：
+权威完整归档：
 
 `ChargingStation_PFL_Paper_Code_WITH_SPATIAL_V1.0.zip`
 
@@ -59,19 +58,26 @@ SHA-256：
 
 `8e053ffea7ed6b1274517a5a515d6baef0e14fe7c45230c8ae608cec75b3cc9e`
 
+Private Release：
+
+`https://github.com/Kato814/ChargingStation-PFL-Forecasting/releases/tag/v1.0-archive`
+
+GitHub记录的ZIP asset大小为145,516,950 bytes，asset digest与上述SHA-256完全一致。Release同时保存对应 `.sha256` 文件。
+
 Git可对验证脚本、注释、文档和维护结构进行非科学性增强，但不得静默改变V1.0算法和冻结结果。任何科学变化必须新建分支和版本。
 
 ## 浮点兼容性增强
 
 原冻结档案在制作环境中可得到逐元素零差异。长期跨CPU/BLAS复现检查发现，充分统计量可能出现约 `4.55e-13` 的机器精度舍入差异。因此Git维护版将该测试固定为 `rtol=0, atol=1e-10`。这是验证鲁棒性修改，不改变模型计算、预测值或论文结果。
 
-## 唯一未闭环的远程归档步骤
+## 远程归档状态
 
-当前GitHub连接不提供Release附件上传能力。仓库 **Issue #3** 跟踪：
+截至2026-09-09，原Issue #3所跟踪的远程归档任务已经完成：
 
-- 创建/使用私有Release；
-- 上传WITH_SPATIAL V1.0 ZIP及 `.sha256`；
-- 下载后再次核验SHA-256；
-- 将Release位置回填至恢复文档。
+- Private Release `v1.0-archive` 已发布；
+- 完整WITH_SPATIAL V1.0 ZIP已上传；
+- `.sha256` 配套文件已上传；
+- GitHub asset digest已核对并与冻结SHA-256一致；
+- Release位置已回填至恢复和大文件文档。
 
-该步骤只涉及远程二进制托管。即使暂时未完成，Git代码记录、冻结本地ZIP及其SHA-256仍可正常用于版本管理与完整恢复；普通Git clone本身不能恢复被有意排除的大文件。
+因此，当前仓库的539维V1.0长期归档链已经闭环：普通Git用于代码与轻量证据维护，Private Release用于完整二进制恢复。
