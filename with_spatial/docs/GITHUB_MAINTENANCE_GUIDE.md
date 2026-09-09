@@ -1,12 +1,12 @@
 # GitHub维护指南（539维权威版本）
 
-本文件规定 `ChargingStation-PFL-Forecasting` 仓库中 `with_spatial/` 的长期维护方式。该目录是当前论文原最终实验的权威代码记录。
+本文件规定 `ChargingStation-PFL-Forecasting` 仓库中 `with_spatial/` 的长期维护方式。该目录是论文原最终实验的权威代码记录。
 
 ## 1. 分支策略
 
-- `main`：只接受已经核验的稳定记录；
-- `import-v1.0`：当前V1.0整理和导入分支；
-- 后续方法修改新建独立分支，例如：
+- `main`：稳定记录，只接受已经核验的代码、文档和结果元数据；
+- `import-v1.0`：V1.0一次性整理/导入分支。PR #1合并后视为历史导入分支，不再作为后续开发主线；
+- 后续方法修改从 `main` 新建独立分支，例如：
   - `dev/alpha-adaptation-v2`
   - `dev/group-correction-weighted`
   - `dev/negative-transfer-v2`
@@ -41,24 +41,28 @@
 
 ## 4. 每次提交前最低检查
 
+在 `with_spatial/` 目录下执行：
+
 ```bash
 python -m py_compile src/*.py
 python tests/test_information_boundary.py
 python tests/test_paired_daily_statistics.py
 ```
 
-涉及主链或输入时，应运行：
+涉及主链或输入时，应恢复冻结大文件后运行：
 
 ```bash
 python verify_package.py
 ```
+
+普通GitHub CI只执行不依赖大型归档文件的语法和元数据检查；完整科学回归仍以本地/恢复后的冻结档案验证为准。
 
 ## 5. 结果管理
 
 - `docs/RESULTS_BASELINE.md`：V1.0不可覆盖的论文结果基线；
 - `results_reference/`：冻结证据的轻量摘要；
 - `results_reproduced/`：当前清洁代码重新计算的轻量结果；
-- 大型OOF、pkl和完整5 min数据由冻结Release ZIP恢复。
+- 大型OOF、pkl和完整5 min数据由匹配SHA-256的冻结ZIP恢复。
 
 不得把 `no_spatial/` 结果复制为 `with_spatial/` 的结果。
 
@@ -73,6 +77,8 @@ python verify_package.py
 5. 运行了哪些测试？
 6. 是否需要新版本号和新Release？
 
+文档/维护型PR也应说明是否触及冻结数值、SHA、数据路径或恢复规则。
+
 ## 7. 冻结包
 
 权威V1.0归档：
@@ -83,4 +89,4 @@ SHA-256：
 
 `8e053ffea7ed6b1274517a5a515d6baef0e14fe7c45230c8ae608cec75b3cc9e`
 
-完整恢复步骤见 `RELEASE_RESTORE_CHECKLIST.md`。GitHub Release上传任务由仓库Issue跟踪。
+完整恢复步骤见 `RELEASE_RESTORE_CHECKLIST.md`。私有GitHub Release附件上传与下载后校验由仓库 **Issue #3** 跟踪；在该远程托管步骤完成前，本地冻结ZIP及其SHA-256仍是完整二进制恢复依据。
