@@ -1,0 +1,5 @@
+﻿variable,station_count,median_station_rho,min_station_rho,max_station_rho,positive_station_count,negative_station_count,expected_direction_descriptive,wilcoxon_alternative,wilcoxon_p
+shared_history_WAPE,10,-0.7763213530655391,-0.9054263565891472,-0.08118393234672304,0,10,negative,two-sided,0.001953125
+shared_history_gain,10,0.943058491895701,0.7840732910500352,0.9785764622973926,10,0,positive,two-sided,0.001953125
+load_total_cv,10,-0.47244538407329106,-0.9092318534178999,0.43368569415081043,2,8,mixed,two-sided,0.048828125
+residual_rms,10,0.7083157152924594,-0.14136715997181112,0.9300916138125441,8,2,mixed,two-sided,0.009765625

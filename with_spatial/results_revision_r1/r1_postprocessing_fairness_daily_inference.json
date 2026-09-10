@@ -1,0 +1,46 @@
+{
+  "FedAvg残差": {
+    "n_prediction_days": 44,
+    "mean_daily_WAPE_difference": -0.01026664266537255,
+    "circular_mbb_95_low": -0.01537699634663659,
+    "circular_mbb_95_high": -0.004928858343170971,
+    "block_length_days": 7,
+    "newey_west_lag": 7,
+    "newey_west_standard_error": 0.0029396566935558904,
+    "newey_west_z": -3.492463146420589,
+    "newey_west_p_two_sided": 0.0004785876321794263
+  },
+  "全参数微调": {
+    "n_prediction_days": 44,
+    "mean_daily_WAPE_difference": -0.002261797309144666,
+    "circular_mbb_95_low": -0.005961286690739045,
+    "circular_mbb_95_high": 0.0010494061370043086,
+    "block_length_days": 7,
+    "newey_west_lag": 7,
+    "newey_west_standard_error": 0.0017632786260189308,
+    "newey_west_z": -1.282722580407654,
+    "newey_west_p_two_sided": 0.19958928604320558
+  },
+  "本地MLP": {
+    "n_prediction_days": 44,
+    "mean_daily_WAPE_difference": -0.002986140997329657,
+    "circular_mbb_95_low": -0.00559896907804699,
+    "circular_mbb_95_high": -0.0002537376576850951,
+    "block_length_days": 7,
+    "newey_west_lag": 7,
+    "newey_west_standard_error": 0.0012443546120089971,
+    "newey_west_z": -2.399750817420578,
+    "newey_west_p_two_sided": 0.016406235840638266
+  },
+  "pFedMe微调": {
+    "n_prediction_days": 44,
+    "mean_daily_WAPE_difference": -0.002004203019148815,
+    "circular_mbb_95_low": -0.004758916694897642,
+    "circular_mbb_95_high": 0.000823899930377102,
+    "block_length_days": 7,
+    "newey_west_lag": 7,
+    "newey_west_standard_error": 0.0013399292652004412,
+    "newey_west_z": -1.4957528514380232,
+    "newey_west_p_two_sided": 0.1347180720187073
+  }
+}

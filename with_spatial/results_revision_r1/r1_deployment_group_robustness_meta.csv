@@ -1,0 +1,2 @@
+﻿deployment_groups,groups_with_positive_aggregate_improvement,groups_with_aggregate_degradation,min_group_relative_improvement_percent,max_group_relative_improvement_percent,interpretation
+5,4,1,-1.1166582204462256,12.02926406072287,deployment-group heterogeneity check; do not claim universal improvement across all folds/stations

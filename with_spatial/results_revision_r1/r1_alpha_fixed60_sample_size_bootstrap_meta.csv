@@ -1,0 +1,2 @@
+﻿fixed_history_pool_days,bootstrap_reps,bootstrap_seed,station_days,strictly_decreasing_sd_station_days,strictly_decreasing_sd_rate,interpretation
+60,300,20260910,440,440,1.0,whole-day bootstrap within the same 60-day preforecast pool; varies day sample count without changing history span

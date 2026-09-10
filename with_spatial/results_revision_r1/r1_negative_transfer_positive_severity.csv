@@ -1,0 +1,4 @@
+﻿stage,positive_station_days,median_excess_WAPE,p75_excess_WAPE,p90_excess_WAPE,max_excess_WAPE,scope_note
+station_candidate,184,0.048459038059408405,0.11064166011484261,0.3911356225481398,3.662342894181646,station-day diagnostic only; the controller is historical/cumulative and does not guarantee zero day-wise degradation
+group_candidate,147,0.026988456734734295,0.0638409582036055,0.166477315567848,3.662342894181646,station-day diagnostic only; the controller is historical/cumulative and does not guarantee zero day-wise degradation
+final_prediction,82,0.023759132821059924,0.043037386880698,0.155658798175252,3.2373191798833787,station-day diagnostic only; the controller is historical/cumulative and does not guarantee zero day-wise degradation

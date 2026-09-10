@@ -1,0 +1,4 @@
+﻿item,availability,uses_test_labels,basis
+shared_model_scaler_and_ridge,fit only from training-station samples in the training period,False,training sufficient statistics only; held-out validation/test stations are excluded from shared-model fitting
+fold_hyperparameters,selected by the held-out validation stations of each fold,False,test stations do not participate in ridge/type-weight/history-window/regularization selection
+target_station_local_history,only observations completed before each forecast day d,False,"pre-d target-station history may be used for rolling adaptation, but day-d and future labels are excluded"

@@ -1,0 +1,5 @@
+﻿variable,rho,p_value_descriptive_only,n_station_days,note
+shared_history_WAPE,-0.4872075315941245,1.308336545155473e-27,440,station-days are repeated measures; pooled p-value is not the primary inferential evidence
+shared_history_gain,0.9477597789996096,1.8009119972628938e-219,440,station-days are repeated measures; pooled p-value is not the primary inferential evidence
+load_total_cv,-0.052140483445397214,0.27512361974933447,440,station-days are repeated measures; pooled p-value is not the primary inferential evidence
+residual_rms,0.3434104890662001,1.2680423203351288e-13,440,station-days are repeated measures; pooled p-value is not the primary inferential evidence

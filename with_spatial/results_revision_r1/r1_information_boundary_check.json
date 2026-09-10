@@ -1,0 +1,15 @@
+{
+  "feature_dimension": 539,
+  "feature_group_counts": {
+    "calendar": 5,
+    "historical_summary": 319,
+    "previous_day_profile": 96,
+    "similar_day_profile": 96,
+    "spatial_poi": 8,
+    "spatial_static": 4,
+    "station_static": 5,
+    "station_type": 6
+  },
+  "causal_perturbation_test": "PASS",
+  "status": "PASS"
+}

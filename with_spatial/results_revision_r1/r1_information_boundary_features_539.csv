@@ -1,0 +1,13 @@
+﻿item,dimension,availability,uses_day_d_true_load,basis
+previous_day_profile,96,completed load curve of day d-1,False,96-point previous-day same-time load; previous_date=d-1
+recent7_mean_profile,96,loads from dates strictly before d,False,mean of the most recent historical days; no day-d label
+same_weekday_profile,96,loads from dates strictly before d,False,same-day-of-week historical dates satisfy history_date < forecast_date
+same_daytype_profile,96,loads from dates strictly before d,False,same day-type historical dates satisfy history_date < forecast_date
+similar_day_profile,96,historical loads before d + day-d calendar known in advance,False,"candidate load profiles are selected only from history_date < forecast_date; similarity uses calendar/holiday descriptors, not day-d true load"
+target_date_calendar_special_scalars,14,calendar/holiday descriptors known before day d,False,"month, weekday, weekend/holiday/Spring-Festival flags and derived calendar distance descriptors"
+historical_load_scalar_summaries,17,summary statistics computed from loads strictly before d,False,totals/means/peaks/std of previous/recent/same-weekday/day-type/similar-day histories plus history length
+station_non_spatial_static,5,static station attributes known before deployment,False,"equipment counts, DC-power ratio and rated power"
+spatial_poi,8,static POI descriptors known before deployment,False,8 POI features within 1 km and 3 km
+spatial_location_zone_static,4,static location/zone descriptors known before deployment,False,"longitude, latitude, zone charging-facility count and zone area"
+day_ahead_calendar,5,calendar/holiday information known before day d,False,dayofweek/weekend/holiday/public-holiday/Spring-Festival flags
+station_type_indicators,6,static station type known before deployment,False,model/raw station-type one-hot indicators

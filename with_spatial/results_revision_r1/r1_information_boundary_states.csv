@@ -1,0 +1,4 @@
+﻿item,dimension,availability,uses_day_d_true_load,basis
+alpha_jd,1 scalar / station-day,estimated only from dates before d,False,"rolling scalar adaptation uses [start:index), excluding current day"
+gamma_d,1 scalar / deployment-group day,estimated only from previous group-history days,False,"group total correction uses [start:day_index), excluding current day"
+risk_eligibility,1 binary state / station-day,recent/cumulative losses accumulated before current prediction,False,recent screen excludes current day; cumulative guard updates losses after decision
