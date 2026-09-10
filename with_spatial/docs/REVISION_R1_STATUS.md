@@ -155,3 +155,13 @@ Windows本机已完成V1.0完整核验：
 - 不根据测试结果调整新增基线协议
 - 不把smoke结果写入论文
 - 不宣称本文显著优于全部比较方法
+
+<!-- R1_NEURAL_FAIRNESS_RESULT_LOCK_20260910 -->
+## 2026-09-10 新增神经基线与公平性扩展结果
+
+- FedAvg 正式校准：PASS，WAPE=0.100486，与冻结 FedAvg 的绝对差=0.001129。
+- FedProx：WAPE=0.100512，nRMSE=0.069714，7/10 站点改善，最坏站点相对退化=2.67%。
+- FedRep：WAPE=0.100500，nRMSE=0.069834，2/10 站点改善，最坏站点相对退化=1.47%。
+- 固定后处理扩展：FedProx `+group+risk` WAPE=0.099788；FedRep `+group+risk` WAPE=0.100403。
+- 原 E2 四基线复算一致性：PASS。
+- 结果解释必须遵守 `docs/REVISION_R1_NEURAL_FAIRNESS_RESULT_LOCK_20260910.md`。

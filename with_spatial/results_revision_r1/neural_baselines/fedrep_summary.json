@@ -1,0 +1,20 @@
+{
+  "method": "fedrep",
+  "record_count": 42240,
+  "WAPE": 0.10050020514934897,
+  "nRMSE": 0.0698339904536073,
+  "pooled_WAPE": 0.22637069719784042,
+  "improved_stations": 2,
+  "max_station_relative_degradation": 0.014668239291803387,
+  "paired_daily_proposed_minus_method": {
+    "n_prediction_days": 44,
+    "mean_daily_WAPE_difference": -0.011318024770445212,
+    "circular_mbb_95_low": -0.016949190309765893,
+    "circular_mbb_95_high": -0.005429093720798719,
+    "block_length_days": 7,
+    "newey_west_lag": 7,
+    "newey_west_standard_error": 0.003187318703774569,
+    "newey_west_z": -3.5509548376953606,
+    "newey_west_p_two_sided": 0.00038383627528735056
+  }
+}

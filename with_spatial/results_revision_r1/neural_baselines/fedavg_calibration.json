@@ -1,0 +1,21 @@
+{
+  "new_WAPE": 0.10048604742245017,
+  "locked_WAPE": 0.10161459174758193,
+  "absolute_difference": 0.001128544325131764,
+  "acceptance_atol": 0.003,
+  "formal_protocol": true,
+  "folds": [
+    "fold_1",
+    "fold_2",
+    "fold_3",
+    "fold_4",
+    "fold_5"
+  ],
+  "seeds": [
+    20260612,
+    20260613,
+    20260614
+  ],
+  "rounds": 30,
+  "status": "PASS"
+}

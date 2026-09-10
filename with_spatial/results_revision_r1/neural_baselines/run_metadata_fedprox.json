@@ -1,0 +1,55 @@
+{
+  "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "torch": "2.13.0.dev20260518+cu130",
+  "torch_cuda_runtime": "13.0",
+  "cuda_available": true,
+  "device": "cuda",
+  "device_name": "NVIDIA GeForce RTX 5080",
+  "git_commit": "a790d4b1b622ecd6b29d3ce47e87689ece13691c",
+  "clients_cache_sha256": "daf125ac4ced7f0e20e95ec07b133cd75623678d5b8365fad587185866b02b1c",
+  "locked_oof_sha256": "abb8d28757bc40686990ec8cb3a7e35de449984b22c9c64c21ae2476779fbc67",
+  "feature_dimension": 539,
+  "output_dimension": 96,
+  "folds": [
+    "fold_1",
+    "fold_2",
+    "fold_3",
+    "fold_4",
+    "fold_5"
+  ],
+  "seeds": [
+    20260612,
+    20260613,
+    20260614
+  ],
+  "rounds": 30,
+  "methods": [
+    "fedprox"
+  ],
+  "fedprox_mu_grid": [
+    0.001,
+    0.01,
+    0.1,
+    1.0
+  ],
+  "fedavg_calibration_atol": 0.003,
+  "fedrep": {
+    "shared_prefixes": [
+      "fc1.",
+      "ln1.",
+      "fc2."
+    ],
+    "personal_prefixes": [
+      "out."
+    ],
+    "head_epochs_per_round": 10,
+    "representation_epochs_per_round": 1,
+    "target_head_epochs": 10,
+    "target_history_days": 30,
+    "target_head_initialization": "initial_seed_head",
+    "target_representation_frozen": true
+  },
+  "formal_protocol": true,
+  "smoke": false
+}

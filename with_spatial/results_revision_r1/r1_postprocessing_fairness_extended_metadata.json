@@ -1,0 +1,57 @@
+{
+  "experiment": "R1 fixed-postprocessing fairness extension",
+  "git_commit": "93603046096ffd728ccc6aee5dc914acbbca252c",
+  "locked_source_sha256": "abb8d28757bc40686990ec8cb3a7e35de449984b22c9c64c21ae2476779fbc67",
+  "fedprox_oof_sha256": "afbe490a8fc1ad0aabbe24ebce4307508ab50785758d0cdad13c24107051b5cd",
+  "fedrep_oof_sha256": "e120eccab0f6f94336759b9811649aa6de4d9627df91481853957b901ed6d08e",
+  "record_count_per_method": 42240,
+  "methods": [
+    "FedAvg残差",
+    "全参数微调",
+    "本地MLP",
+    "pFedMe微调",
+    "FedProx",
+    "FedRep"
+  ],
+  "stages": [
+    "raw",
+    "+group",
+    "+group+risk"
+  ],
+  "group_total_correction": {
+    "history_days": 5,
+    "regularization": 0.0,
+    "coefficient_max": 1.0,
+    "min_history_days": 5
+  },
+  "negative_transfer": {
+    "history_days": 10,
+    "min_history_days": 3,
+    "relative_gain_margin": -0.02,
+    "regret_budget": 0.03,
+    "regret_warmup_days": 7
+  },
+  "new_method_alignment": {
+    "FedProx": {
+      "max_y_true_difference": 0.0,
+      "max_baseline_difference": 0.0
+    },
+    "FedRep": {
+      "max_y_true_difference": 0.0,
+      "max_baseline_difference": 0.0
+    }
+  },
+  "old_E2_consistency": {
+    "existing_summary_present": true,
+    "existing_inference_present": true,
+    "max_numeric_difference_summary": 8.326672684688674e-17,
+    "max_numeric_difference_inference": 0.0,
+    "status": "PASS"
+  },
+  "scope_note": "Fixed-postprocessing control: the same frozen group-correction and negative-transfer-control parameters are applied to every baseline. No baseline-specific retuning is performed. This is not a claim that each baseline receives its own best possible calibrated postprocessor.",
+  "outputs": {
+    "summary": "C:\\Users\\Administrator\\ChargingStation-PFL-Forecasting\\with_spatial\\results_revision_r1\\r1_postprocessing_fairness_extended_summary.csv",
+    "daily_inference": "C:\\Users\\Administrator\\ChargingStation-PFL-Forecasting\\with_spatial\\results_revision_r1\\r1_postprocessing_fairness_extended_daily_inference.json",
+    "local_large_oof": "C:\\Users\\Administrator\\ChargingStation-PFL-Forecasting\\with_spatial\\results_revision_r1\\r1_postprocessing_fairness_extended_oof.csv.gz"
+  }
+}
