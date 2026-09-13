@@ -1,0 +1,23 @@
+{
+  "method": "local_ridge_rebuild_v1",
+  "provenance": "versioned_reconstruction_not_exact_historical_recovery",
+  "record_count": 42240,
+  "WAPE": 0.10252751709562602,
+  "nMAE": 0.05546048596013632,
+  "nRMSE": 0.07272036624555173,
+  "R2": 0.8892262787098006,
+  "pooled_WAPE": 0.2258444488215608,
+  "improved_stations": 7,
+  "max_station_relative_degradation": 0.20921010188776523,
+  "paired_daily_proposed_minus_method": {
+    "n_prediction_days": 44,
+    "mean_daily_WAPE_difference": -0.022653072859320153,
+    "circular_mbb_95_low": -0.053317185924090044,
+    "circular_mbb_95_high": -0.0021724824659896244,
+    "block_length_days": 7,
+    "newey_west_lag": 7,
+    "newey_west_standard_error": 0.01416413101681688,
+    "newey_west_z": -1.599326695892919,
+    "newey_west_p_two_sided": 0.10974803077930288
+  }
+}

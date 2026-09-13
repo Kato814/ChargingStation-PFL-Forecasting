@@ -1,0 +1,35 @@
+{
+  "raw": {
+    "n_prediction_days": 44,
+    "mean_daily_WAPE_difference": -0.022653072859320153,
+    "circular_mbb_95_low": -0.053317185924090044,
+    "circular_mbb_95_high": -0.0021724824659896244,
+    "block_length_days": 7,
+    "newey_west_lag": 7,
+    "newey_west_standard_error": 0.01416413101681688,
+    "newey_west_z": -1.599326695892919,
+    "newey_west_p_two_sided": 0.10974803077930288
+  },
+  "+group": {
+    "n_prediction_days": 44,
+    "mean_daily_WAPE_difference": -0.005175723932930454,
+    "circular_mbb_95_low": -0.009822500209144852,
+    "circular_mbb_95_high": -0.0008287764202862677,
+    "block_length_days": 7,
+    "newey_west_lag": 7,
+    "newey_west_standard_error": 0.0023127660360289775,
+    "newey_west_z": -2.2378934368204315,
+    "newey_west_p_two_sided": 0.025228005142235766
+  },
+  "+group+risk": {
+    "n_prediction_days": 44,
+    "mean_daily_WAPE_difference": -0.003920102909963592,
+    "circular_mbb_95_low": -0.007165995558669896,
+    "circular_mbb_95_high": -0.00124611221865194,
+    "block_length_days": 7,
+    "newey_west_lag": 7,
+    "newey_west_standard_error": 0.0015343570107242892,
+    "newey_west_z": -2.554883174231477,
+    "newey_west_p_two_sided": 0.010622344316547959
+  }
+}

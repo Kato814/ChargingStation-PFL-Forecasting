@@ -1,0 +1,126 @@
+{
+  "protocol_id": "R1_LOCAL_RIDGE_REBUILD_V1_20260912",
+  "status": "COMPLETED",
+  "started_at_utc": "2026-09-13T05:17:23.876663+00:00",
+  "output_dir": "C:\\Users\\Administrator\\ChargingStation-PFL-Forecasting\\with_spatial\\results_revision_r1\\local_ridge_rebuild_v1\\run_20260913T051723_075685Z",
+  "git_commit": "f8a6a3f369f22f828513f8a2908510355dc57a71",
+  "branch": "revision/r1-202609",
+  "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "scipy": "1.17.1",
+  "input_files": {
+    "clients_cache": {
+      "path": "C:\\Users\\Administrator\\ChargingStation-PFL-Forecasting\\with_spatial\\data\\clients_with_spatial.pkl",
+      "sha256": "daf125ac4ced7f0e20e95ec07b133cd75623678d5b8365fad587185866b02b1c",
+      "size_bytes": 47746837
+    },
+    "locked_oof": {
+      "path": "C:\\Users\\Administrator\\ChargingStation-PFL-Forecasting\\with_spatial\\results_reference\\oof_predictions_source.csv.gz",
+      "sha256": "abb8d28757bc40686990ec8cb3a7e35de449984b22c9c64c21ae2476779fbc67",
+      "size_bytes": 4002934
+    }
+  },
+  "protocol_sha256": "7bd04be74e6166d143b06889aeec6c45a2885a71bf68bd2360fa2e0e88329b20",
+  "script_sha256": "7b97165ceab0de42c0198d498687a9772d3aa4eefb085af0168871f2777e08bb",
+  "dependency_check": "PASS",
+  "completed_at_utc": "2026-09-13T05:17:27.657765+00:00",
+  "record_count": 42240,
+  "alignment_max_absolute_difference": {
+    "y_true": 5.684341886080802e-14,
+    "previous_day_baseline": 5.684341886080802e-14
+  },
+  "selected_alpha": {
+    "fold_1": 1000.0,
+    "fold_2": 100.0,
+    "fold_3": 1000.0,
+    "fold_4": 100.0,
+    "fold_5": 1000.0
+  },
+  "validation_only_selection": true,
+  "history_window_check": "PASS",
+  "history_model_fit_count": 1060,
+  "reference_integrity_check": "PASS",
+  "fairness_implementation": "reused existing experiments/r1_postprocessing_fairness.py functions",
+  "fairness_parameters": {
+    "group_total_correction": {
+      "history_days": 5,
+      "regularization": 0.0,
+      "coefficient_max": 1.0,
+      "min_history_days": 5
+    },
+    "negative_transfer": {
+      "history_days": 10,
+      "min_history_days": 3,
+      "relative_gain_margin": -0.02,
+      "regret_budget": 0.03,
+      "regret_warmup_days": 7
+    }
+  },
+  "scientific_acceptance_does_not_require_significance_or_matching_old_numbers": true,
+  "outputs": {
+    "local_ridge_daily_inference.json": {
+      "size_bytes": 382,
+      "sha256": "4441522b67329f300738fdf8cfab408aabf0535bb4e501531bf7f3668187912f"
+    },
+    "local_ridge_daily_wape.csv": {
+      "size_bytes": 7612,
+      "sha256": "51b9ea79f131f395131892664b097d3fbab813b26bb014a286a1aa9e0d0578a0"
+    },
+    "local_ridge_fairness_daily_inference.json": {
+      "size_bytes": 1257,
+      "sha256": "19a4106f4a1d4a4461ea9568c7dfdd2ff671d368107ec9d83e5a80b394e4fac4"
+    },
+    "local_ridge_fairness_oof.csv.gz": {
+      "size_bytes": 1536340,
+      "sha256": "cebbeec1b19f499e0efb15bbc1d9349f750f6a6c3c1a52df1091d03af228439a"
+    },
+    "local_ridge_fairness_summary.csv": {
+      "size_bytes": 411,
+      "sha256": "5a5bba6da62ed7501af4631a915886cabf30b2f9712f53c969d78876b2668b91"
+    },
+    "local_ridge_historical_comparison.json": {
+      "size_bytes": 541,
+      "sha256": "6a4c911772e1f34c5eed7053028dedd44f650c15e3edaba6c571eeefad16c1f9"
+    },
+    "local_ridge_oof.csv.gz": {
+      "size_bytes": 1142678,
+      "sha256": "29bc287e34e1aef7d20f46c8346bc3180b1d4a11188bc6fbe64f8f354d0d09a2"
+    },
+    "local_ridge_selected_alpha.json": {
+      "size_bytes": 108,
+      "sha256": "f8ba13885b46d3dfcc19e37cedbe5cd8ea939ad03a423309f731d2fc9a32bdbc"
+    },
+    "local_ridge_station.csv": {
+      "size_bytes": 823,
+      "sha256": "4f7d78c3095fb80c4b7f8c3753feb9bc2d315a2263d69552d8e6e90e5e1cb015"
+    },
+    "local_ridge_summary.json": {
+      "size_bytes": 839,
+      "sha256": "e08c6449af6805c1f2071c3a9b9c3c970b3c77d2417e1b73c40301ec08310c81"
+    },
+    "local_ridge_type.csv": {
+      "size_bytes": 272,
+      "sha256": "e944a088074bcd43e953f1eb2209ab99d81263e16e4d28218b984127ededdc93"
+    },
+    "local_ridge_validation_grid.csv": {
+      "size_bytes": 655,
+      "sha256": "85a0dd8ce12fb7cbeda602f9bb9641200861d76154facfc8781f429e3c44a921"
+    },
+    "local_ridge_validation_oof.csv.gz": {
+      "size_bytes": 1273678,
+      "sha256": "5123ffac7a68a29c0969e1da3d229198d61581d6343e7c64e10c329d3d1162be"
+    },
+    "local_ridge_window_audit.csv": {
+      "size_bytes": 88243,
+      "sha256": "78dd147f2cff3e235588463cbe460bc74f8cdd474d4df9f155eb6fb5907fd8fb"
+    },
+    "table2_local_ridge_row.csv": {
+      "size_bytes": 134,
+      "sha256": "57ae81c960554729c46092c9a4f31036fa5cd7a7a2e4c054a955a68e5b4c6f1c"
+    }
+  },
+  "postrun_integrity_check": "PASS"
+}

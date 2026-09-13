@@ -1,0 +1,19 @@
+{
+  "historical_summary_only": {
+    "WAPE": 0.1025,
+    "nRMSE": 0.0727
+  },
+  "rebuilt": {
+    "WAPE": 0.10252751709562602,
+    "nRMSE": 0.07272036624555173
+  },
+  "difference_rebuilt_minus_historical": {
+    "WAPE": 2.7517095626025667e-05,
+    "nRMSE": 2.0366245551725615e-05
+  },
+  "printed_four_decimals_match": {
+    "WAPE": true,
+    "nRMSE": true
+  },
+  "note": "Comparison for provenance only. Matching rounded summaries does not prove identical historical predictions. Never mix old errors and a new p value."
+}
