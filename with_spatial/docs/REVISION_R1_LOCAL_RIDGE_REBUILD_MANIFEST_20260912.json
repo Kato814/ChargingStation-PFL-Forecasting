@@ -1,0 +1,10 @@
+{
+  "manifest_version": "R1_LOCAL_RIDGE_PAYLOAD_V1_1_DEPENDENCY_PIN_FIX",
+  "hash_rule": "UTF-8, strip BOM, normalize CRLF/CR to LF; includes trailing newline",
+  "canonical_text_sha256": {
+    "docs/REVISION_R1_LOCAL_RIDGE_REBUILD_PROTOCOL_20260912.md": "0dad43c519775e203eded2b9ff4f168fa4813bf931136747cdb51b63706e18aa",
+    "experiments/r1_local_ridge_rebuild.py": "7b97165ceab0de42c0198d498687a9772d3aa4eefb085af0168871f2777e08bb",
+    "experiments/r1_local_ridge_rebuild_protocol.json": "7bd04be74e6166d143b06889aeec6c45a2885a71bf68bd2360fa2e0e88329b20",
+    "tests/test_r1_local_ridge_rebuild.py": "3c2ff836d6b835d13bb9020ffacc85181db07ec4fc5fe335855d7b578545917c"
+  }
+}

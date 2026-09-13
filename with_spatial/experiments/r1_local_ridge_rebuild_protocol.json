@@ -1,0 +1,116 @@
+{
+  "protocol_id": "R1_LOCAL_RIDGE_REBUILD_V1_20260912",
+  "provenance": "versioned_reconstruction_not_exact_historical_recovery",
+  "branch": "revision/r1-202609",
+  "parent_result_commit": "95d593ef31c29dd453e02d846611780cc57d470a",
+  "payload_manifest": "docs/REVISION_R1_LOCAL_RIDGE_REBUILD_MANIFEST_20260912.json",
+  "input_dimension": 539,
+  "output_dimension": 96,
+  "station_count": 40,
+  "history_days": 60,
+  "history_rule": "60 consecutive calendar dates d-60 through d-1; missing history is an error",
+  "train_period": [
+    "2022-09-02",
+    "2022-12-15"
+  ],
+  "validation_period": [
+    "2022-12-16",
+    "2023-01-15"
+  ],
+  "test_period": [
+    "2023-01-16",
+    "2023-02-28"
+  ],
+  "test_pairs": [
+    [
+      1009,
+      1120
+    ],
+    [
+      1011,
+      1307
+    ],
+    [
+      1349,
+      1566
+    ],
+    [
+      1599,
+      1686
+    ],
+    [
+      2213,
+      2255
+    ]
+  ],
+  "validation_rule": "next cyclic test pair; select one ridge alpha per fold on validation-period two-station aggregate WAPE only; finish all selections before test prediction",
+  "ridge_alpha_grid": [
+    100.0,
+    1000.0
+  ],
+  "alpha_grid_provenance": "new reconstruction design using the paper ridge candidate set, not recovered original local-ridge hyperparameters",
+  "tie_break": "smallest numeric ridge alpha on exactly equal validation WAPE",
+  "normalization": "local 60-day input mean and population standard deviation; exact constant or standard deviation <1e-12 columns have zero fitted coefficient",
+  "objective": "sum squared multi-output residual error + ridge_alpha * Frobenius(weight)^2; intercept unpenalized",
+  "target": "cache y_residual; do not standardize target or add output clipping except nonnegative final load",
+  "solver": "float64 centered dual SPD Cholesky solve; no random optimization",
+  "prediction": "max(0, previous_day_baseline + predicted_residual)",
+  "raw_method_exclusions": [
+    "federated shared fitting",
+    "target scalar adaptation",
+    "group correction",
+    "risk guard"
+  ],
+  "fairness": "separate raw/+group/+group+risk evidence from exactly existing E2 functions and paper_config; same test-start warmup; no new retuning",
+  "daily_inference": {
+    "days": 44,
+    "preserve_two_station_group_boundaries": true,
+    "newey_west_lag": 7,
+    "alternative": "two-sided",
+    "bootstrap_block_days": 7,
+    "bootstrap_repetitions": 50000,
+    "bootstrap_seed": 20260716
+  },
+  "reference_integrity": {
+    "proposed_WAPE": 0.09357050219189948,
+    "proposed_minus_persistence_mean_daily_WAPE": -0.011563263932537454
+  },
+  "historical_summary_comparison": "report differences from old 0.1025/0.0727; never an acceptance or tuning target; update all paper row metrics together from new predictions after audit",
+  "dependency_canonical_sha256": {
+    "src/__init__.py": "b418c14c3ad746c550d5cd37701a646ca39cd5ad496a6d8cec62cbafeb6b6ff2",
+    "baselines/__init__.py": "e309fc7e6f85d73858bceb0d4e280846231af847ff2681322109146212989a23",
+    "src/config.py": "6092c47a88f33431f1f90249bde7915bb1402e5548f7d7cc90f27f4a0562a5d4",
+    "src/data_preparation.py": "6bc6d09987f8b2426961e453928fc9ceec0ee3e3d6baa547132b95fbe775011e",
+    "src/evaluation.py": "94a5e64fdf650e22f17f848313d62d2909de2d856c8d6592936fd9adbfeede6f",
+    "src/group_total_correction.py": "0b2ae888e21cc0d3e198882335d4c453b3ecba8be42b31602fba234f7f291f45",
+    "src/negative_transfer_control.py": "55da2a2805e715a959fe7feede09af218772b573ebd68d86e9e9b689a457e6bd",
+    "baselines/reference.py": "1921b7276bdbcfc09074204e0f560a800ba5f1399673762c50b6bf32f3b59668",
+    "baselines/protocols.py": "a03c15f7771a1338aa6ae29541032160ac8f61bc2d58b406a8419c829fa1d7fc",
+    "paper_config.json": "837296fe37577eba0c36ce1a05b09659931842982706ad724b73916555f3b07d",
+    "experiments/r1_postprocessing_fairness.py": "41f64abc07ecee0149d2e30e7d6a86ec7a3dfd1d1733bdc7defa143bcd85f325"
+  },
+  "inputs": {
+    "clients_cache": {
+      "path": "data/clients_with_spatial.pkl",
+      "sha256": "daf125ac4ced7f0e20e95ec07b133cd75623678d5b8365fad587185866b02b1c"
+    },
+    "locked_oof": {
+      "path": "results_reference/oof_predictions_source.csv.gz",
+      "sha256": "abb8d28757bc40686990ec8cb3a7e35de449984b22c9c64c21ae2476779fbc67"
+    }
+  },
+  "context_audit_sha256": "ec0f222544089018aa049c10b2f04381acdc1fc0ec3e4b7b1971794c87db9fb0",
+  "new_result_parent": "results_revision_r1/local_ridge_rebuild_v1",
+  "paper_adoption_requires": "scientific review; no requirement on direction or p<0.05; no mixture of historical errors with new p values",
+  "archival_policy": "never overwrite main, frozen OOF, results_reference, results_reproduced, or previous revision results; full OOF retained locally, light evidence later committed",
+  "dependency_pin_maintenance": {
+    "version": "V1.1_20260912",
+    "path": "src/__init__.py",
+    "previous_archive_canonical_sha256": "fefe7207fb85349200bcfed695ccc6bf948843d2c1475d258371004515e754b5",
+    "reported_checkout_canonical_sha256": "b418c14c3ad746c550d5cd37701a646ca39cd5ad496a6d8cec62cbafeb6b6ff2",
+    "git_reference": "95d593ef31c29dd453e02d846611780cc57d470a:with_spatial/src/__init__.py",
+    "acceptance_rule": "Before preparation or formal run, controller must verify that the working file, Git index and pinned parent-commit blob all match this exact canonical SHA; parse without execution and require an empty module or one module docstring only. If any check fails, export source diagnostics and stop before installing or staging payload.",
+    "scientific_changes": false,
+    "experiment_and_synthetic_test_source_unchanged": true
+  }
+}
